@@ -17,10 +17,10 @@ app.get('/users', (req, res) => {
   res.json(getUsers());
 });
 
-app.post('/users', (req, res) => {
+app.post('/users', async (req, res) => {
   const { username, password } = req.body;
   try {
-    addUser(username, password);
+    await addUser(username, password);
     res.status(200).send('User added successfully');
   } catch (error) {
     console.error('Error adding user:', error);
