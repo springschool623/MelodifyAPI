@@ -69,4 +69,4 @@ const addUser = async (username, password) => {
 };
 
 // Xuất các hàm
-module.exports = { getUsers: readUsersFromFile, addUser };
+module.exports = { getUsers: readUsersFromEndpoint, addUser };
