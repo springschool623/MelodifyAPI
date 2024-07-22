@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const usersFilePath = path.join(__dirname, 'users.json');
+const usersFilePath = users.json;
 
 // Đọc dữ liệu từ tệp JSON
 const readUsersFromFile = () => {
