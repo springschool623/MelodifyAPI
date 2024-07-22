@@ -18,9 +18,14 @@ app.get('/users', (req, res) => {
 });
 
 app.post('/users', (req, res) => {
-  const newUser = req.body;
-  addUser(newUser);
-  res.status(201).send('Người dùng đã được thêm');
+  const { username, password } = req.body;
+  try {
+    addUser(username, password);
+    res.status(200).send('User added successfully');
+  } catch (error) {
+    console.error('Error adding user:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.listen(port, () => {
