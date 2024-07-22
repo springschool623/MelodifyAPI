@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { getUsers, addUser } = require('./models/userModel');
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.use(cors()); // Thêm dòng này để bật CORS
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
