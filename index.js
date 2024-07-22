@@ -1,3 +1,5 @@
+require('dotenv').config(); // Nhập biến môi trường từ file .env
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -5,7 +7,7 @@ const connectDB = require('./db'); // Kết nối MongoDB Atlas
 const { getUsers, addUser } = require('./models/userModel');
 
 const app = express();
-const port = 3001;
+const port = 3000;
 
 // Kết nối đến MongoDB
 connectDB();

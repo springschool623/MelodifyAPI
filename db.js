@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb+srv://springschool623:nxt_2003@melodifycluster.wlhn1zx.mongodb.net/?retryWrites=true&w=majority&appName=MelodifyCluster', {
+    const mongoURI = process.env.MONGODB_URI;
+    await mongoose.connect(mongoURI, {
+      // Tùy chọn đã bị loại bỏ trong MongoDB Node.js Driver 4.0.0 trở lên
     });
     console.log('MongoDB connected');
   } catch (error) {
